@@ -1,5 +1,5 @@
 # IMPORTANT NOTICE
 
-All releases in this directory should be considered alpha releases.  The official OBO release still lives at http://purl.obolibrary.org/obo/image.obo.  The official OWL release still lives at  http://purl.obolibrary.org/obo/fbbi.owl.
+All releases in this directory should be considered alpha releases.  Please see the [OBO Foundry page](http://www.obofoundry.org/cgi-bin/detail.cgi?id=image) for links to the current official releases.
 
 dosumis 14/05/12
