@@ -5,12 +5,12 @@ remark: Biological Imaging Methods CV
 remark: corrections and additions to chris@bio.umass.edu
 remark: editor:Chris Woodcock (The Cell: An Image Library)
 remark: This CV covers sample preparation, visualization and imaging methods.
+import: http://purl.obolibrary.org/obo/fbbi/fbbi-ext.ofn
 ontology: fbbi
 
 [Term]
 id: FBbi:00000000
 name: dummy term
-namespace: image
 is_obsolete: true
 created_by: jm
 creation_date: 2010-03-07T02:05:26Z
@@ -4359,7 +4359,7 @@ name: tomography
 def: "An imaging technique that creates virtual sections through the use of any kind of penetrating wave." []
 is_a: FBbi:00000265 ! recorded image
 
-   [Term]
+[Term]
 id: FBbi:00001005
 name: computed tomography
 def: "Tomography in which virtual sections are taken from multiple angles and the results are processed via tomographic reconstruction software to produce 2 or 3D images." []
