@@ -2,6 +2,7 @@
 
 ### Renames
 
+```
 < name: label conjugated to probe
 ---
 > name: vizualization of label conjugated to probe
@@ -35,14 +36,15 @@
 ---
 > name: array-scan confocal microscopy
 
-
 < name: Biological Imaging Method
 ---
 > name: method involved in biological imaging
-
+```
 
 ### new/changed relationships
 
+
+```yaml
 [Term]
 id: FBbi:00000260
 name: X-ray micrograph
@@ -60,8 +62,11 @@ intersection_of: FBbi:00000241 ! microscopy
 intersection_of: FBbi:00000346 FBbi:00000342 ! makes_use_of X-ray illumination
 relationship: FBbi:00000346 FBbi:00000342 ! makes_use_of X-ray illumination
 
+```
+
 ### New terms
 
+```yaml
 [Term]
 id: FBbi:00001000
 name: radiography
@@ -127,6 +132,8 @@ is_a: FBbi:00001006 ! x-ray/gamma ray illumination
 id: FBbi:00001012
 name: fixation method
 is_a: FBbi:00000001 ! sample preparation method
+
+```
 
 ### OBO Foundry uniquenames:
 
