@@ -1,53 +1,26 @@
 ## A summary of changes made to fbbi for the PhIS project
 
-### Notes:
-
-Most changes were made in order to give better type-consistency down the classification heirarchy.  e.g.  This too the form of either [direct renames](#Renames) or us of the alternative annotation property for recording names [OBO FOundry UniquenName](#OBO_Foundry_uniquenames).  The latter was used in order to be conservative with renames in case it caused problems for the widespread usage of these terms by the [Cell Image Libarary](http://www.cellimagelibrary.org/home).
-
-
-### Renames
-
-```
-< name: label conjugated to probe
----
-> name: vizualization of label conjugated to probe
-
-
-< name: mode of electron microscopy
----
-> name: electron microscopy
-
-
-< name: X-ray micrograph
----
-> name: X-ray microscopy
-
-< name: mode of light microscopy
-> name: light microscopy
-
-< name: UV/visible/IR photons
----
-> name: detection of UV/visible/IR photons
-
-< name: X-ray photons
----
-> name: detection of X-ray photons
-
-< name: slit-scan confocal
----
-> name: slit-scan confocal microscopy
-
-< name: array-scan confocal
----
-> name: array-scan confocal microscopy
-
-< name: Biological Imaging Method
----
-> name: method involved in biological imaging
-```
-
 ### new/changed relationships
 
+* Some rearragement of the class heirarchy for consistency:
+e.g. movement of some methods involved in imaging (e.g. illumnination method) out out from classification under microscopy.  These are now linked to micropscopy types by 'makes use of').
+
+* Addition of some new classes (e.g. fixation method) and movement of other classes underneath.
+
+ Some formalization to give better inferred classification.
+ 
+**Old classification:**
+ 
+ ![image](https://user-images.githubusercontent.com/112839/45681894-93607380-bb36-11e8-896a-6a8351ec251c.png)
+ 
+**New classification:**
+ 
+![image](https://user-images.githubusercontent.com/112839/45681915-a410e980-bb36-11e8-87cd-7373b0fd1255.png)
+
+![image](https://user-images.githubusercontent.com/112839/45681983-e33f3a80-bb36-11e8-8669-e56e9123c766.png)
+
+ 
+ #### details
 
 ```diff
 +	EquivalentClasses(<light microscopy> ObjectIntersectionOf(<microscopy with lenses> ObjectSomeValuesFrom(<makes_use_of> <UV/visible/IR illumination>)) )
@@ -167,9 +140,54 @@ is_a: FBbi:00000001 ! sample preparation method
 
 ```
 
-### OBO_Foundry_uniquenames:
+### Relabelling notes
 
-IID | label | obo_foundry_uniquename
+Most edits to labels were made in order to give better type-consistency down the classification heirarchy.  This took the form of either [direct renames](#Renames) or use of the alternative annotation property for recording names [OBO FOundry UniquenName](#OBO_Foundry_uniquenames).  The latter was used in order to be conservative with renames in case it caused problems for the widespread usage of these terms by the [Cell Image Libarary](http://www.cellimagelibrary.org/home).
+
+
+#### Renames
+
+```diff
+< name: label conjugated to probe
+---
+> name: vizualization of label conjugated to probe
+
+< name: mode of electron microscopy
+---
+> name: electron microscopy
+
+< name: X-ray micrograph
+---
+> name: X-ray microscopy
+
+< name: mode of light microscopy
+---
+> name: light microscopy
+
+< name: UV/visible/IR photons
+---
+> name: detection of UV/visible/IR photons
+
+< name: X-ray photons
+---
+> name: detection of X-ray photons
+
+< name: slit-scan confocal
+---
+> name: slit-scan confocal microscopy
+
+< name: array-scan confocal
+---
+> name: array-scan confocal microscopy
+
+< name: Biological Imaging Method
+---
+> name: method involved in biological imaging
+```
+
+#### OBO_Foundry_uniquenames:
+
+ID (IRI) | rdfs:label | obo_foundry_uniquename
  --- |--- | ---
 http://purl.obolibrary.org/obo/FBbi_00000472 | SuperfolderFP | visualization of SuperfolderFP
 http://purl.obolibrary.org/obo/FBbi_00000471 | EmeraldFP | visualization of EmeraldFP
