@@ -1,5 +1,10 @@
 ## A summary of changes made to fbbi for the PhIS project
 
+### Notes:
+
+Most changes were made in order to give better type-consistency down the classification heirarchy.  e.g.  This too the form of either [direct renames](#Renames) or us of the alternative annotation property for recording names [OBO FOundry UniquenName](#OBO_Foundry_uniquenames).  The latter was used in order to be conservative with renames in case it caused problems for the widespread usage of these terms by the [Cell Image Libarary](http://www.cellimagelibrary.org/home).
+
+
 ### Renames
 
 ```
@@ -44,23 +49,50 @@
 ### new/changed relationships
 
 
-```yaml
-[Term]
-id: FBbi:00000260
-name: X-ray micrograph
-is_a: FBbi:00000342 ! X-ray illumination
-
->
-
-[Term]
-id: FBbi:00000260
-name: X-ray microscopy
-xref: http://en.wikipedia.org/wiki/X-ray_microscope
-is_a: FBbi:00000241 ! microscopy
-is_a: FBbi:00001000 ! radiography
-intersection_of: FBbi:00000241 ! microscopy
-intersection_of: FBbi:00000346 FBbi:00000342 ! makes_use_of X-ray illumination
-relationship: FBbi:00000346 FBbi:00000342 ! makes_use_of X-ray illumination
+```diff
++	EquivalentClasses(<light microscopy> ObjectIntersectionOf(<microscopy with lenses> ObjectSomeValuesFrom(<makes_use_of> <UV/visible/IR illumination>)) )
+-	EquivalentClasses(<light microscopy> ObjectIntersectionOf(<microscopy> ObjectSomeValuesFrom(<makes_use_of> <UV/visible/IR illumination>)) )
++	EquivalentClasses(<radiography> ObjectIntersectionOf(<recorded image> ObjectSomeValuesFrom(<makes_use_of> <x-ray/gamma ray illumination>)) )
++	EquivalentClasses(<X-ray computed tomography> ObjectIntersectionOf(<computed tomography> ObjectSomeValuesFrom(<makes_use_of> <X-ray illumination>)) )
++	EquivalentClasses(<X-ray microscopy> ObjectIntersectionOf(<microscopy> ObjectSomeValuesFrom(<makes_use_of> <X-ray illumination>)) )
++	EquivalentClasses(<X-ray radiography> ObjectIntersectionOf(<recorded image> ObjectSomeValuesFrom(<makes_use_of> <X-ray illumination>)) )
++	EquivalentClasses(<X-ray tomography> ObjectIntersectionOf(<tomography> ObjectSomeValuesFrom(<makes_use_of> <X-ray illumination>)) )
++	SubClassOf(<chemically fixed tissue> <fixation method>)
+-	SubClassOf(<chemically fixed tissue> <sample preparation method>)
++	SubClassOf(<computed tomography> <tomography>)
++	SubClassOf(<contrast-enhancing method> <method involved in biological imaging>)
+-	SubClassOf(<contrast-enhancing method> <microscopy with lenses>)
++	SubClassOf(<cryofixed tissue> <fixation method>)
+-	SubClassOf(<cryofixed tissue> <sample preparation method>)
++	SubClassOf(<detection method> <method involved in biological imaging>)
+-	SubClassOf(<detection method> <microscopy with lenses>)
++	SubClassOf(<fixation method> <sample preparation method>)
++	SubClassOf(<heat fixed tissue> <fixation method>)
+-	SubClassOf(<heat fixed tissue> <sample preparation method>)
++	SubClassOf(<http://purl.obolibrary.org/obo/FBbi_00001007> <x-ray/gamma ray illumination>)
++	SubClassOf(<illumination method> <method involved in biological imaging>)
+-	SubClassOf(<illumination method> <microscopy with lenses>)
++	SubClassOf(<imaged parameter> <method involved in biological imaging>)
+-	SubClassOf(<imaged parameter> <microscopy with lenses>)
+-	SubClassOf(<light microscopy> <microscopy with lenses>)
++	SubClassOf(<nearfield illumination> <illumination method>)
++	SubClassOf(<nearfield illumination> <illumination method>)
++	SubClassOf(<radiography> <recorded image>)
++	SubClassOf(<resolution-enhancing method> <method involved in biological imaging>)
+-	SubClassOf(<resolution-enhancing method> <microscopy with lenses>)
++	SubClassOf(<source of contrast> <method involved in biological imaging>)
+-	SubClassOf(<source of contrast> <microscopy with lenses>)
++	SubClassOf(<tomography> <recorded image>)
++	SubClassOf(<unfixed tissue> <fixation method>)
+-	SubClassOf(<unfixed tissue> <sample preparation method>)
+-	SubClassOf(<X-ray illumination> <illumination by photons>)
++	SubClassOf(<X-ray illumination> <x-ray/gamma ray illumination>)
++	SubClassOf(<X-ray microscopy> <microscopy>)
++	SubClassOf(<X-ray microscopy> <radiography>)
+-	SubClassOf(<X-ray microscopy> <X-ray illumination>)
++	SubClassOf(<X-ray microscopy> ObjectSomeValuesFrom(<makes_use_of> <X-ray illumination>))
++	SubClassOf(<X-ray tomography> <radiography>)
++	SubClassOf(<x-ray/gamma ray illumination> <illumination by photons>)
 
 ```
 
@@ -135,7 +167,7 @@ is_a: FBbi:00000001 ! sample preparation method
 
 ```
 
-### OBO Foundry uniquenames:
+### OBO_Foundry_uniquenames:
 
 IID | label | obo_foundry_uniquename
  --- |--- | ---
