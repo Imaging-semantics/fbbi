@@ -1,4 +1,4 @@
-## A summary of changes made to fbbi for the PhIS project
+# A summary of changes made to fbbi for the PhIS project
 
 ### new/changed relationships
 
@@ -142,7 +142,7 @@ is_a: FBbi:00000001 ! sample preparation method
 
 ### Relabelling notes
 
-Most edits to labels were made in order to give better type-consistency down the classification heirarchy.  This took the form of either [direct renames](#Renames) or use of the alternative annotation property for recording names [OBO FOundry UniquenName](#OBO_Foundry_uniquenames).  The latter was used in order to be conservative with renames in case it caused problems for the widespread usage of these terms by the [Cell Image Libarary](http://www.cellimagelibrary.org/home).
+Most edits to labels were made in order to give better type-consistency down the classification heirarchy.  For example, 'mode of electron microscopy' was changed simply to 'electron microscopy' to fit its parent term (microscopy) and sub classes (e.g. scanning electron microscopy). This work took the form of either [direct renames](#Renames) or use of the alternative annotation property for recording names [OBO Foundry UniquenName](#OBO_Foundry_uniquenames).  The latter was used in order to be conservative with renames in case it caused problems for the widespread usage of these terms by the [Cell Image Libarary](http://www.cellimagelibrary.org/home). Whether it is viable to make these new names the primary 
 
 
 #### Renames
