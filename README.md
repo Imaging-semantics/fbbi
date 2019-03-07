@@ -3,7 +3,9 @@
 
 # Biological imaging methods ontology
 
-This ontology... YOUR DESCRIPTION HERE
+This ontology was originally developed by FlyBase (http://www.flybase.net) and extended by the [cell image library](http://www.cellimagelibrary.org/), who have both used it extensively to annotate images on their respective sites.  Please credit them if you use this ontology.
+
+It has also been used by [PhenoImageShare](https://github.com/PhenoImageShare), [Virtual Fly Brain](https://github.com/VirtualFlyBrain) and in metadata for the [Human Cell Atlas](https://github.com/human_cell_atlas)
 
 More information can be found at http://obofoundry.org/ontology/fbbi
 
@@ -13,7 +15,7 @@ More information can be found at http://obofoundry.org/ontology/fbbi
 
 The latest version of the ontology can always be found at:
 
-http://purl.obolibrary.org/obo/fbbi.owl
+http://purl.obolibrary.org/obo/fbbi.owl 
 
 (note this will not show up until the request has been approved by obofoundry.org)
 
