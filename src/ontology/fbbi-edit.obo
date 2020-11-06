@@ -4381,6 +4381,13 @@ name: fixation method
 is_a: FBbi:00000001 ! sample preparation method
 
 [Term]
+id: FBbi:00050000
+name: focussed ion beam scanning electron microscopy (FIB-SEM)
+def: "A method of reconstructing 3D structure by combining focussed ion beam milling to remove sucessive layers from a sample block with scanning EM to image the exposed surface between each milling step." [PMID:22119321]
+synonym: "FIB-SEM" EXACT []
+is_a: FBbi:00000373 ! back-scattered_electron imaging
+
+[Term]
 id: FBbi_root:00000000
 name: method involved in biological imaging
 
